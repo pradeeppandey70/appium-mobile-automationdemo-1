@@ -9,8 +9,8 @@ public class ConfigReader {
 	
 	static {
 		try {
-			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "src/main/resources/config.properties");
-			prop.get(fis);
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/config.properties");
+			prop.load(fis);
 		}catch(IOException e) {
 			System.out.println("file not found");
 		}
