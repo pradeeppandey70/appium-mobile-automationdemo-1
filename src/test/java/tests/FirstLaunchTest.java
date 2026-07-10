@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 
-public class FirstLaunch extends BaseTest{
+public class FirstLaunchTest extends BaseTest{
 	
 	@Test
     public void verifyApplicationLaunchTest() {

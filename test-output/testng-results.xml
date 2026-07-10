@@ -1,25 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-09T13:56:53 IST" name="Default suite" finished-at="2026-07-09T13:57:06 IST" duration-ms="13519">
+  <suite started-at="2026-07-10T11:30:36 IST" name="Default suite" finished-at="2026-07-10T11:31:19 IST" duration-ms="43254">
     <groups>
     </groups>
-    <test started-at="2026-07-09T13:56:53 IST" name="Default test" finished-at="2026-07-09T13:57:06 IST" duration-ms="13519">
-      <class name="tests.FirstLaunch">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FirstLaunch@31368b99]" started-at="2026-07-09T13:56:53 IST" name="setup" finished-at="2026-07-09T13:57:04 IST" duration-ms="11171" status="PASS">
+    <test started-at="2026-07-10T11:30:36 IST" name="Default test" finished-at="2026-07-10T11:31:19 IST" duration-ms="43254">
+      <class name="tests.FirstLaunchTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FirstLaunchTest@7a69b07]" started-at="2026-07-10T11:30:36 IST" name="setup" finished-at="2026-07-10T11:31:19 IST" duration-ms="43191" status="FAIL">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: 'com.saucelabs.mydemoapp.android.view.activities.SplashActivity' never started. Consider checking the driver's troubleshooting documentation. 
+Host info: host: 'PRADEEP-TW', ip: '192.168.29.140'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.3'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]}]
+Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: 'com.saucelabs.mydemoapp.android.view.activities.SplashActivity' never started. Consider checking the driver's troubleshooting documentation. 
+Host info: host: 'PRADEEP-TW', ip: '192.168.29.140'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.3'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]}]
+Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:194)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:108)
+at driver.strategy.AndroidDriverStrategy.createDriver(AndroidDriverStrategy.java:17)
+at driver.factory.DriverFactory.initialiseDriver(DriverFactory.java:27)
+at base.BaseTest.setup(BaseTest.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:846)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:611)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyApplicationLaunchTest()[pri:0, instance:tests.FirstLaunch@31368b99]" started-at="2026-07-09T13:57:04 IST" name="verifyApplicationLaunchTest" finished-at="2026-07-09T13:57:04 IST" duration-ms="11" status="PASS">
+        <test-method signature="verifyApplicationLaunchTest()[pri:0, instance:tests.FirstLaunchTest@7a69b07]" started-at="2026-07-10T11:31:19 IST" name="verifyApplicationLaunchTest" finished-at="2026-07-10T11:31:19 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: 'com.saucelabs.mydemoapp.android.view.activities.SplashActivity' never started. Consider checking the driver's troubleshooting documentation. 
+Host info: host: 'PRADEEP-TW', ip: '192.168.29.140'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.3'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]}]
+Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Cannot start the 'com.saucelabs.mydemoapp.android' application. Consider checking the driver's troubleshooting documentation. Original error: 'com.saucelabs.mydemoapp.android.view.activities.SplashActivity' never started. Consider checking the driver's troubleshooting documentation. 
+Host info: host: 'PRADEEP-TW', ip: '192.168.29.140'
+Build info: version: '4.45.0', revision: 'cd6a3cd cd6a3cdfca6970f62e5bc8344109d0fe0e2af05e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.3'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}]}]
+Capabilities {appium:app: C:/Users/Thoughtwin/Downloa..., appium:automationName: UiAutomator2, appium:deviceName: emulator-5554, appium:platformVersion: 17, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:115)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:76)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:575)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:204)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:194)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:108)
+at driver.strategy.AndroidDriverStrategy.createDriver(AndroidDriverStrategy.java:17)
+at driver.factory.DriverFactory.initialiseDriver(DriverFactory.java:27)
+at base.BaseTest.setup(BaseTest.java:12)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:846)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:611)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyApplicationLaunchTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FirstLaunch@31368b99]" started-at="2026-07-09T13:57:04 IST" name="tearDown" finished-at="2026-07-09T13:57:06 IST" duration-ms="2281" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FirstLaunchTest@7a69b07]" started-at="2026-07-10T11:31:19 IST" name="tearDown" finished-at="2026-07-10T11:31:19 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.FirstLaunch -->
+      </class> <!-- tests.FirstLaunchTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
