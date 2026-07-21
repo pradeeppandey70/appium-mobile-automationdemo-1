@@ -1,89 +1,106 @@
 package environment;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class EmulatorManager {
-	
-	private static final String EMULATOR_NAME = "Pixel_9";
 
-    public static void startEmulator() {
+	private static final String EMULATOR_NAME = "Pixel_9";// need to take this from config file
+	private static final String emulatorPath = EnvironmentUtil.getEmulatorPath();
 
-        try {
+	public static void startEmulator() {
+		System.out.println(emulatorPath);
 
-            if (isEmulatorRunning()) {
-                System.out.println("Emulator already running");
-                return;
-            }
+		try {
 
-            new ProcessBuilder(
-                    "emulator",
-                    "-avd",
-                    EMULATOR_NAME
-            ).start();
+			if (isEmulatorRunning()) {
+				System.out.println("Emulator already running");
+				return;
+			}
+			ProcessBuilder pb = new ProcessBuilder(emulatorPath, "-avd", EMULATOR_NAME);
+			
+			pb.inheritIO();   // <-- IMPORTANT
 
-            System.out.println("Starting Emulator...");
+			Process process = pb.start();
+			
+			Thread.sleep(5000);
 
-            waitForBoot();
+			System.out.println("PID : " + process.pid());
+			System.out.println("Alive : " + process.isAlive());
+			//System.out.println(process.isAlive());
+			System.out.println("Starting Emulator...");
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+			waitForBoot();
 
-    }
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 
-    private static boolean isEmulatorRunning() {
+	}
 
-        try {
+	private static boolean isEmulatorRunning() {
 
-            Process process = Runtime.getRuntime().exec("adb devices");
+		try {
 
-            BufferedReader reader =
-                    new BufferedReader(
-                            new InputStreamReader(process.getInputStream()));
+			Process process = new ProcessBuilder(EnvironmentUtil.getAdbPath(),"adb devices").start();
+			
 
-            String line;
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-            while ((line = reader.readLine()) != null) {
+			String line;
 
-                if (line.contains("emulator")) {
-                    return true;
-                }
+			while ((line = reader.readLine()) != null) {
+				
+				System.out.println("ADB OUTPUT -> " + line);
 
-            }
+				if (line.contains("emulator")) {
+					return true;
+				}
 
-        } catch (Exception ignored) {
-        }
+			}
 
-        return false;
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    private static void waitForBoot() throws Exception {
-    	
-    	System.out.println("Step 1");
+		return false;
+	}
 
-        Runtime.getRuntime().exec("adb wait-for-device").waitFor();
-        
-        System.out.println("Step 2");
+	private static void waitForBoot() throws Exception {
 
-        while (true) {
+		System.out.println("Waiting for emulator to appear...");
+		int retries = 0;
 
-            Process process = Runtime.getRuntime()
-                    .exec("adb shell getprop sys.boot_completed");
+		while (!isEmulatorRunning()) {
 
-            BufferedReader reader =
-                    new BufferedReader(
-                            new InputStreamReader(process.getInputStream()));
+		    if (retries++ > 10) {
+		        throw new RuntimeException("Emulator failed to start.");
+		    }
 
-            String output = reader.readLine();
+		    Thread.sleep(3000);
+		}
 
-            if ("1".equals(output)) {
-                break;
-            }
+		/*
+		 * while (!isEmulatorRunning()) { Thread.sleep(3000); }
+		 */
+		System.out.println("Emulator detected.");
 
-            Thread.sleep(5000);
-        }
+		while (true) {
 
-        System.out.println("Emulator Boot Completed");
-	    }
+			Process process = Runtime.getRuntime().exec("adb shell getprop sys.boot_completed");
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+			String output = reader.readLine();
+
+			if ("1".equals(output)) {
+				break;
+			}
+
+			Thread.sleep(5000);
+		}
+
+		System.out.println("Emulator Boot Completed");
+	}
 
 }
