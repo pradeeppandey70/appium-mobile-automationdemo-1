@@ -26,9 +26,8 @@ public final class AndroidOptionManager {
         options.setApp(
                 ConfigReader.get("app"));
 
-		/*
-		 * options.setAppActivity( ConfigReader.get("appActivity"));
-		 */
+		options.setAppWaitActivity("*");
+		 
 
         return options;
 	}
