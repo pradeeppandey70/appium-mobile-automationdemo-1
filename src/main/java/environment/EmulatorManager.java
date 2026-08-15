@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 public class EmulatorManager {
 
-	private static final String EMULATOR_NAME = "Pixel_9";// need to take this from config file
+	private static final String EMULATOR_NAME = "Pixel_10";// need to take this from config file
 	private static final String emulatorPath = EnvironmentUtil.getEmulatorPath();
 
 	public static void startEmulator() {
