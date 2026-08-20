@@ -1,7 +1,5 @@
 package driver.manager;
 
-import org.openqa.selenium.WebDriver;
-
 import io.appium.java_client.AppiumDriver;
 
 public class DriverManager {
@@ -11,7 +9,7 @@ public class DriverManager {
 		driver.set(appiumDriver);
 	}
 	
-	public static WebDriver getDriver() {
+	public static AppiumDriver getDriver() {
 		return driver.get();
 	}
 	
