@@ -19,6 +19,16 @@ public class BasePage {
 		driver.findElement(locator).click();
 	}
 	
+	public boolean display(By locator) {
+		 return driver.findElement(locator).isDisplayed();
+	}
 	
+	public String text(By locator) {
+		 return driver.findElement(locator).getText();
+	}
+	
+	public String attribute(By locator, String attribute) {
+		 return driver.findElement(locator).getAttribute("attribute");
+	}
 
 }
