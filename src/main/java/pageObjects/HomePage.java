@@ -9,8 +9,8 @@ public class HomePage extends BasePage{
 	
 	By dashboard = AppiumBy.accessibilityId("Dashboard");
 	
-	public String dashboardText() {
-		return attribute(dashboard, "text");
+	public boolean dashboardBTNPresence() {
+		return display(dashboard);
 	}
 
 }

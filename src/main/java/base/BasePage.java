@@ -28,7 +28,7 @@ public class BasePage {
 	}
 	
 	public String attribute(By locator, String attribute) {
-		 return driver.findElement(locator).getAttribute("attribute");
+		 return driver.findElement(locator).getAttribute("text");
 	}
 
 }
