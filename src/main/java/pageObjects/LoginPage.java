@@ -15,6 +15,7 @@ public class LoginPage extends BasePage{
 	By passwordField = AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Password']");
 	By signin_btn = AppiumBy.accessibilityId("Sign In");
 	By forgetPasswordLink = AppiumBy.androidUIAutomator("new UiSelector().text(\"Forgot your password?\")");
+	By loginErrorMsg = AppiumBy.xpath("//android.widget.TextView[@text='Incorrect email or password']");
 	
 	
 	public boolean logoDisplay() {
@@ -50,6 +51,10 @@ public class LoginPage extends BasePage{
 	
 	public boolean forgetPasswordDisplay() {
 		return display(forgetPasswordLink);
+	}
+	
+	public String getLoginError() {
+		return text(loginErrorMsg);
 	}
 	
 	public ForgetPassowordScreen clickforgetpassoword() {
