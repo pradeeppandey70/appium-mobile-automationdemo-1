@@ -30,5 +30,9 @@ public class BasePage {
 	public String attribute(By locator, String attribute) {
 		 return driver.findElement(locator).getAttribute("text");
 	}
+	
+	public boolean enabled(By locator) {
+		return driver.findElement(locator).isEnabled();
+	}
 
 }

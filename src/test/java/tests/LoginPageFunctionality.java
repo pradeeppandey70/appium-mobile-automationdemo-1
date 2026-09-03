@@ -36,6 +36,30 @@ public class LoginPageFunctionality extends BaseTest{
         //System.out.println("Application launched successfully.");
 
     }
+	
+	@Test
+	public void loginWithunregisteredemail() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		lp.login("pradeeptest2@yopmail.com", "Aa@12345");
+		Thread.sleep(5000);
+		String errorMsg = lp.getLoginError();
+		System.out.println(errorMsg);
+        Assert.assertEquals(errorMsg, "Incorrect email or password");
+        //System.out.println("Application launched successfully.");
+
+    }
+	
+	@Test
+	public void loginWithNoData() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		lp.enterEmail("");
+		lp.enterPassword("");
+		boolean buttonActive =lp.SigninButtonActive();
+		Thread.sleep(5000);
+        Assert.assertEquals(buttonActive, false);
+        //System.out.println("Application launched successfully.");
+
+    }
 
 
 }

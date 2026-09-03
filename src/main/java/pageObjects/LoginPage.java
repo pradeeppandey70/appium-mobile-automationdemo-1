@@ -38,6 +38,10 @@ public class LoginPage extends BasePage{
 		type(text, passwordField);
 	}
 	
+	public boolean SigninButtonActive() {
+		return enabled(signin_btn);
+	}
+	
 	public void clickSignin() {
 		click(signin_btn);
 	}
