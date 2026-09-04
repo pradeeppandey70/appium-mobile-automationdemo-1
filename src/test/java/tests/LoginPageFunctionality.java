@@ -60,6 +60,50 @@ public class LoginPageFunctionality extends BaseTest{
         //System.out.println("Application launched successfully.");
 
     }
+	
+	@Test
+	public void validateEmailField() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		lp.enterEmail("");
+		//enter various combination like half email, without @, without domain etc
+		// assert error message
+		//make it datadriven
+
+    }
+	
+	@Test
+	public void testPasswordEyeButtonDefaultStatus() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		lp.enterPassword("Aa@12345");
+		//Assert Password Status is Encrypted 
+		// 
+
+    }
+	
+	@Test
+	public void testPasswordEyeButtonencryptDecrypt() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		lp.enterPassword("Aa@12345");
+		//Assert Password Status is Encrypted 
+		//click on eye button
+		//Assert decrypted	// 
+
+    }
+	
+	@Test
+	public void testForgotPasswordVisibility() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		//check forgotpassword link visibility
+		
+    }
+	
+	@Test
+	public void testforgotPWDRedirection() throws InterruptedException {
+		LoginPage lp = new LoginPage();
+		//click on forgot passowrd and assert the redirection 
+		//assert current url
+
+    }
 
 
 }
