@@ -14,13 +14,17 @@ public class WaitUtils {
 	protected AppiumDriver driver;
 	protected WebDriverWait wait;
 	
-	public WaitUtils() {
+	public WaitUtils(AppiumDriver driver) {
 		this.driver = DriverManager.getDriver();
 		wait = new WebDriverWait(driver,Duration.ofSeconds(Long.valueOf(ConfigReader.get("explicitWaitTime"))));
 	}
 	
-	public WebElement visiblity(By locator) {
+	public WebElement visible(By locator) {
 		return  wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
+	public WebElement clickable(By locator) {
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
 }
