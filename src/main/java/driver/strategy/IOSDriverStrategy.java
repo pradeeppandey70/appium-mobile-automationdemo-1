@@ -6,7 +6,7 @@ import java.net.URL;
 import driver.options.IOSOptionManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
-import utils.ConfigReader;
+import utility.ConfigReader;
 
 public class IOSDriverStrategy implements MobileDriverStrategy {
 

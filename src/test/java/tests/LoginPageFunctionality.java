@@ -14,7 +14,7 @@ public class LoginPageFunctionality extends BaseTest{
     public void loginWithValidCredential() throws InterruptedException {
 		LoginPage lp = new LoginPage();
 		HomePage home = lp.login("1000piper@yopmail.com", "Aa@12345");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		boolean actual = home.dashboardBTNPresence();
 		System.out.println(actual);
         Assert.assertEquals(actual, true);
@@ -29,7 +29,7 @@ public class LoginPageFunctionality extends BaseTest{
 	public void loginWithwrongPassword() throws InterruptedException {
 		LoginPage lp = new LoginPage();
 		lp.login("1000piper@yopmail.com", "Aa@123456");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		String errorMsg = lp.getLoginError();
 		System.out.println(errorMsg);
         Assert.assertEquals(errorMsg, "Incorrect email or password");
@@ -41,7 +41,7 @@ public class LoginPageFunctionality extends BaseTest{
 	public void loginWithunregisteredemail() throws InterruptedException {
 		LoginPage lp = new LoginPage();
 		lp.login("pradeeptest2@yopmail.com", "Aa@12345");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		String errorMsg = lp.getLoginError();
 		System.out.println(errorMsg);
         Assert.assertEquals(errorMsg, "Incorrect email or password");
@@ -55,7 +55,7 @@ public class LoginPageFunctionality extends BaseTest{
 		lp.enterEmail("");
 		lp.enterPassword("");
 		boolean buttonActive =lp.SigninButtonActive();
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
         Assert.assertEquals(buttonActive, false);
         //System.out.println("Application launched successfully.");
 

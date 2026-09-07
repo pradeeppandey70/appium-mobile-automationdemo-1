@@ -1,7 +1,7 @@
 package driver.options;
 
 import io.appium.java_client.ios.options.XCUITestOptions;
-import utils.ConfigReader;
+import utility.ConfigReader;
 
 public final class IOSOptionManager {
 	

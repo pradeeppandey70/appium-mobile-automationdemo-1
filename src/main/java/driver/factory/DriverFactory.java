@@ -4,7 +4,7 @@ import driver.strategy.AndroidDriverStrategy;
 import driver.strategy.IOSDriverStrategy;
 import driver.strategy.MobileDriverStrategy;
 import io.appium.java_client.AppiumDriver;
-import utils.ConfigReader;
+import utility.ConfigReader;
 
 public final class DriverFactory {
 	public static AppiumDriver initialiseDriver() {

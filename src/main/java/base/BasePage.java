@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driver.manager.DriverManager;
 import io.appium.java_client.AppiumDriver;
-import utils.WaitUtils;
+import utility.WaitUtils;
 
 public class BasePage {
 	protected AppiumDriver driver;

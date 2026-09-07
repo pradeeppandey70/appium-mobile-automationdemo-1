@@ -1,7 +1,7 @@
 package driver.options;
 
 import io.appium.java_client.android.options.UiAutomator2Options;
-import utils.ConfigReader;
+import utility.ConfigReader;
 
 public final class AndroidOptionManager {
 	
