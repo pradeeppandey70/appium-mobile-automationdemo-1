@@ -10,6 +10,8 @@ public class LoginPage extends BasePage{
 	By headerSignin = AppiumBy.androidUIAutomator("new UiSelector().text(\"Sign In\").instance(0)");
 	By labelemail = AppiumBy.androidUIAutomator("new UiSelector().text(\"EMAIL *\")");
 	By emailField = AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Email']");
+	By emailFieldError = AppiumBy.xpath("");
+	By passwordFieldError = AppiumBy.xpath("");
 	By labelpassword = AppiumBy.androidUIAutomator("new UiSelector().text(\"PASSWORD *\")");
 	By passwordFieldEyeBtn = AppiumBy.androidUIAutomator("new UiSelector().className(\"com.horcrux.svg.PathView\").instance(8)");
 	By passwordField = AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Password']");
