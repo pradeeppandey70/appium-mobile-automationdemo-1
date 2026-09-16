@@ -6,10 +6,9 @@
       <class name="tests.LoginPageFunctionality">
         <methods>
           <include name="setup"/>
+          <include name="validateEmailField"/>
           <include name="tearDown"/>
           <include name="beforeSuite"/>
-          <include name="loginWithwrongPassword"/>
-          <include name="loginWithValidCredential"/>
         </methods>
       </class> <!-- tests.LoginPageFunctionality -->
     </classes>

@@ -40,7 +40,7 @@ public class LoginPageFunctionality extends BaseTest{
 	@Test
 	public void loginWithunregisteredemail() throws InterruptedException {
 		LoginPage lp = new LoginPage();
-		lp.login("pradeeptest2@yopmail.com", "Aa@12345");
+		lp.login("pradeept@yopmail.com", "Aa@12345");
 		//Thread.sleep(5000);
 		String errorMsg = lp.getLoginError();
 		System.out.println(errorMsg);
@@ -64,9 +64,12 @@ public class LoginPageFunctionality extends BaseTest{
 	@Test
 	public void validateEmailField() throws InterruptedException {
 		LoginPage lp = new LoginPage();
-		lp.enterEmail("");
+		lp.enterEmail("pradeepyopmail");
+		lp.clickPasswordLabel();
+		lp.clickOnPasswordField();
 		//enter various combination like half email, without @, without domain etc
 		// assert error message
+		Assert.assertEquals(lp.emailFieldError() , "Please enter a valid email");
 		//make it datadriven
 
     }
