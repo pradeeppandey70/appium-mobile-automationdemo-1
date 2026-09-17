@@ -5,14 +5,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import driver.manager.DriverManager;
 import io.appium.java_client.AppiumDriver;
+import utility.GestureAction;
 import utility.WaitUtils;
 
 public class BasePage {
 	protected AppiumDriver driver;
 	protected WaitUtils wait;
+	protected GestureAction gestures;
 	public BasePage() {
 		this.driver = DriverManager.getDriver();
 		wait = new WaitUtils(driver);
+		gestures = new GestureAction(driver);
 		
 	}
 	

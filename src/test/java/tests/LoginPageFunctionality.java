@@ -64,9 +64,10 @@ public class LoginPageFunctionality extends BaseTest{
 	@Test
 	public void validateEmailField() throws InterruptedException {
 		LoginPage lp = new LoginPage();
+		lp.tapOnemailField();
 		lp.enterEmail("pradeepyopmail");
-		lp.clickPasswordLabel();
-		lp.clickOnPasswordField();
+		lp.tapPasswordLabel();
+		//lp.tapOnPasswordField();
 		//enter various combination like half email, without @, without domain etc
 		// assert error message
 		Assert.assertEquals(lp.emailFieldError() , "Please enter a valid email");

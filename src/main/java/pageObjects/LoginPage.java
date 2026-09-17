@@ -10,9 +10,9 @@ public class LoginPage extends BasePage{
 	By headerSignin = AppiumBy.androidUIAutomator("new UiSelector().text(\"Sign In\").instance(0)");
 	By labelemail = AppiumBy.androidUIAutomator("new UiSelector().text(\"EMAIL *\")");
 	By emailField = AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Email']");
-	By emailFieldError = AppiumBy.androidUIAutomator("new UiSelector().textContains('a valid email')");
+	By emailFieldError = AppiumBy.androidUIAutomator("new UiSelector().textContains(\"a valid email\")");
 	By passwordFieldError = AppiumBy.xpath("");
-	By labelpassword = AppiumBy.androidUIAutomator("new UiSelector().text('PASSWORD *')");
+	By labelpassword = AppiumBy.androidUIAutomator("new UiSelector().text(\"PASSWORD *\")");
 	By passwordFieldEyeBtn = AppiumBy.androidUIAutomator("new UiSelector().className(\"com.horcrux.svg.PathView\").instance(8)");
 	By passwordField = AppiumBy.xpath("//android.widget.EditText[@text='Enter Your Password']");
 	By signin_btn = AppiumBy.accessibilityId("Sign In");
@@ -32,8 +32,12 @@ public class LoginPage extends BasePage{
 		return display(headerSignin);
 	}
 	
-	public void clickPasswordLabel() {
-		click(labelpassword);
+	public void tapPasswordLabel() {
+		gestures.tap(labelpassword);
+	}
+	
+	public void tapOnemailField() {
+		gestures.tap(emailField);
 	}
 	
 	public void enterEmail(String text) {
@@ -44,8 +48,8 @@ public class LoginPage extends BasePage{
 		return text(emailFieldError);
 	}
 	
-	public void clickOnPasswordField() {
-		click(passwordField);
+	public void tapOnPasswordField() {
+		gestures.tap(passwordField);
 	}
 	
 	public void enterPassword(String text) {
